@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Lumi Vance</title>
+<meta name="description" content="Contact the human operator behind the Lumi Vance project — brand, press, and membership inquiries.">
+<meta property="og:title" content="Contact — Lumi Vance">
+<meta property="og:description" content="Contact the human operator behind the Lumi Vance project — brand, press, and membership inquiries.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F5EDE3">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23C97B4A'/%3E%3Ctext x='50' y='70' font-size='54' text-anchor='middle' fill='%23F5EDE3' font-family='Georgia, serif'%3Elv%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="disclosure-banner">Lumi is an AI-generated character. <a href="about.html#how-she-is-made">Here's how she's made ↗</a></div>
+
+<header class="site-header">
+  <div class="logo">lumi vance</div>
+  <nav class="site-nav">
+    <a href="about.html">About</a>
+    <a href="pricing.html">Inner Circle</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom:0;">
+    <div class="container">
+      <div class="eyebrow">Contact</div>
+      <h1>Reach the person behind the project.</h1>
+      <p class="subhead">This form goes to the human operator, not a bot. Business/brand inquiries welcome.</p>
+    </div>
+  </section>
+
+  <section class="container" style="max-width:520px;">
+    <form action="#" method="POST" style="display:flex; flex-direction:column; gap:14px;">
+      <label>
+        Name
+        <input type="text" name="name" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #d9cdb4; margin-top:4px;">
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #d9cdb4; margin-top:4px;">
+      </label>
+      <label>
+        Reason for contact
+        <select name="reason" style="width:100%; padding:10px; border-radius:8px; border:1px solid #d9cdb4; margin-top:4px;">
+          <option>General question</option>
+          <option>Brand / sponsorship inquiry</option>
+          <option>Membership / billing question</option>
+          <option>Press</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="5" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #d9cdb4; margin-top:4px;"></textarea>
+      </label>
+      <button type="submit" class="btn" style="border:none; cursor:pointer; align-self:flex-start;">Send message</button>
+    </form>
+    <p style="margin-top:20px; font-size:0.85rem; color:#7a7462;">
+      Note: this is a static template form. Wire the <code>action</code> attribute to your form-handling endpoint (e.g. Formspree, or an n8n webhook — see the automation architecture doc, Section 9, in the project repo) before going live.
+    </p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>© 2026 Lumi Vance. All rights reserved.</div>
+    <div>
+      <a href="privacy.html">Privacy</a> ·
+      <a href="terms.html">Terms</a> ·
+      <a href="faq.html">FAQ</a> ·
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
