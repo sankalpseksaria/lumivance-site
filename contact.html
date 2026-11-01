@@ -38,7 +38,7 @@
   </section>
 
   <section class="container" style="max-width:520px;">
-    <form action="#" method="POST" style="display:flex; flex-direction:column; gap:14px;">
+    <form id="contact-form" style="display:flex; flex-direction:column; gap:14px;">
       <label>
         Name
         <input type="text" name="name" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #d9cdb4; margin-top:4px;">
@@ -54,6 +54,7 @@
           <option>Brand / sponsorship inquiry</option>
           <option>Membership / billing question</option>
           <option>Press</option>
+          <option value="waitlist">Membership waitlist</option>
           <option>Other</option>
         </select>
       </label>
@@ -64,8 +65,21 @@
       <button type="submit" class="btn" style="border:none; cursor:pointer; align-self:flex-start;">Send message</button>
     </form>
     <p style="margin-top:20px; font-size:0.85rem; color:#7a7462;">
-      Note: this is a static template form. Wire the <code>action</code> attribute to your form-handling endpoint (e.g. Formspree, or an n8n webhook — see the automation architecture doc, Section 9, in the project repo) before going live.
+      Sending opens your email app with the message filled in. Or write directly to <a href="mailto:lumivance2002@gmail.com">lumivance2002@gmail.com</a>.
     </p>
+    <script>
+      (function () {
+        var f = document.getElementById('contact-form');
+        var reason = new URLSearchParams(location.search).get('reason');
+        if (reason) { var o = f.reason.querySelector('option[value="' + reason + '"]'); if (o) o.selected = true; }
+        f.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var subject = '[' + f.reason.value + '] from ' + f.name.value;
+          var body = f.message.value + '\n\n— ' + f.name.value + ' (' + f.email.value + ')';
+          location.href = 'mailto:lumivance2002@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        });
+      })();
+    </script>
   </section>
 </main>
 
